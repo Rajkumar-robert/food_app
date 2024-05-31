@@ -45,7 +45,6 @@ try {
 
     app.post("/api/add_choice",async (req,res)=>{
         try{
-            console.log(req.body);
             let data = new Choice(req.body);
             let dataChoice = await data.save();
             res.status(200).json(dataChoice);
