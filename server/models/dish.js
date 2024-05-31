@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 
-// Define schema for rice
 const riceSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -16,7 +15,6 @@ const riceSchema = new mongoose.Schema({
   }
 });
 
-// Define schema for toppings
 const toppingSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -32,7 +30,7 @@ const toppingSchema = new mongoose.Schema({
   }
 });
 
-// Define schema for dish
+
 const dishSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -54,8 +52,8 @@ const dishSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  rice: [riceSchema], // Embed rice schema as an array
-  toppings: [toppingSchema] // Embed topping schema as an array
+  rice: [riceSchema], 
+  toppings: [toppingSchema] 
 });
 
 module.exports = mongoose.model("Dish", dishSchema, "dish_data");
